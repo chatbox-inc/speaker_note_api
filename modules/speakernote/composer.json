@@ -1,0 +1,15 @@
+{
+    "name": "chatbox-inc/speakernote",
+    "authors": [
+        {
+            "name": "mikakane",
+            "email": "t.goto@chatbox-inc.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Chatbox\\SpeakerNote\\": "./src"
+        }
+    }
+}
