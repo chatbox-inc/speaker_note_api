@@ -3,6 +3,8 @@ namespace Chatbox\SpeakerNote;
 
 use Illuminate\Support\ServiceProvider;
 
+use Chatbox\SpeakerNote\Commands;
+
 class SpeakerNoteServiceProvider extends ServiceProvider
 {
     public function boot()
@@ -13,9 +15,9 @@ class SpeakerNoteServiceProvider extends ServiceProvider
 
     public function register()
     {
-
-
-
+        $this->commands([
+            Commands\Connpass\ImportCommand::class,
+        ]);
     }
 
 }

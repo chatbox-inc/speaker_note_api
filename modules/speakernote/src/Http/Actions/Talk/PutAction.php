@@ -4,7 +4,7 @@ namespace Chatbox\SpeakerNote\Http\Actions\Login;
 use Chatbox\SpeakerNote\Http\AuthUserTrait;
 use Chatbox\SpeakerNote\Model\User;
 
-class LoginAction
+class PutAction
 {
     use AuthUserTrait;
 

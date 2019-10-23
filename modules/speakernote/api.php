@@ -41,8 +41,6 @@ Route::group([
     Route::post('/groups/{group_key}/event', Hoge::class."@handle");
     // イベントの編集
     Route::patch('/groups/{group_key}/event/{event_key}', Hoge::class."@handle");
-
-    Route::post('/login', Hoge::class."@handle");
 });
 
 

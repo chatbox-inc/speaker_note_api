@@ -2,6 +2,7 @@
 namespace Chatbox\SpeakerNote\Http\Actions\Login;
 
 use Chatbox\Larabase\Testing\TestFirebaseUser;
+use Chatbox\SpeakerNote\Model\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Str;
 use Tests\TestCase;
@@ -21,7 +22,7 @@ class LoginActionTest extends TestCase
                 $this->withHeader("Authorization", "Bearer $token");
             });
         }
-        config()->set("app.url","http://localhost/api/");
+        config()->set("app.url","http://localhost/");
     }
 
     /**
@@ -32,7 +33,8 @@ class LoginActionTest extends TestCase
     public function testBasicTest()
     {
         $response = $this->post('/spnote/login');
-
         $response->assertStatus(200);
+        $user = $response->json("user");
+        assert(User::where("uid",$user["uid"])->first() !== null);
     }
 }

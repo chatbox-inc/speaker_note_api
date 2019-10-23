@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class User extends Model
 {
-    protected $table = "t_user";
+    protected $table = "t_users";
 
     public function findByFbUser(FirebaseUser $user):?User{
         return $this->newInstance()->where("uid",$user->uid)->first();
