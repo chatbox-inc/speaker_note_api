@@ -35,12 +35,11 @@ Route::group([
     // グループの作成
     //Route::post('/', Hoge::class."@handle");
 
-    // イベントの一覧取得
-    Route::post('/groups/{group_key}/events', Hoge::class."@handle");
-    // イベントの作成
-    Route::post('/groups/{group_key}/event', Hoge::class."@handle");
     // イベントの編集
-    Route::patch('/groups/{group_key}/event/{event_key}', Hoge::class."@handle");
+    Route::get('/team/{series_id}', Actions\Team\GetAction::class."@handle");
+
+    // イベントの編集
+    Route::get('/event/{event_id}', Actions\Event\GetAction::class."@handle");
 });
 
 
