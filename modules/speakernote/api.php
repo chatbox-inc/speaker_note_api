@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Http\Request;
+use \Barryvdh\Cors\HandleCors;
+use Chatbox\SpeakerNote\Http\Actions;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,10 +15,11 @@ use Illuminate\Http\Request;
 |
 */
 
-use Chatbox\SpeakerNote\Http\Actions;
-
 Route::group([
-    "prefix" => "spnote"
+    "prefix" => "spnote",
+    "middleware" => [
+        HandleCors::class
+    ]
 ],function(){
 
     // メッセージング
