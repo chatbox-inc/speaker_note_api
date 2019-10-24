@@ -2,6 +2,7 @@
 
 namespace App\Exceptions;
 
+use Asm89\Stack\CorsService;
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 
@@ -46,6 +47,14 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
-        return parent::render($request, $exception);
+        $response = parent::render($request, $exception);
+        if (! $response->headers->has('Access-Control-Allow-Origin')) {
+            $cors = app(CorsService::class);
+            if ($cors->isCorsRequest($request)) {
+                $response = $cors->addActualRequestHeaders($response, $request);
+            }
+        }
+        return $response;
+
     }
 }

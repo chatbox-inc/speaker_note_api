@@ -1,7 +1,6 @@
 <?php
 namespace Chatbox\SpeakerNote\Model;
 
-use Chatbox\Larabase\FirebaseUser;
 use Illuminate\Database\Eloquent\Model;
 
 class Event extends Model

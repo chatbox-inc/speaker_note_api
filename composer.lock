@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "aaa5a9ff4d836dcb196019ee0452f955",
+    "content-hash": "d6379aed72334b81eacfc1ea40c238b6",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -122,16 +122,16 @@
         },
         {
             "name": "chatbox-inc/laravel-firebase",
-            "version": "v1.0.1",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/chatbox-inc/laravel-firebase.git",
-                "reference": "d0e81a11d709ed50d2ad6ad97f13891d713f7986"
+                "reference": "74b70fd255d0b0fc28e4ec085a03cf2e9ab1d3c7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/chatbox-inc/laravel-firebase/zipball/d0e81a11d709ed50d2ad6ad97f13891d713f7986",
-                "reference": "d0e81a11d709ed50d2ad6ad97f13891d713f7986",
+                "url": "https://api.github.com/repos/chatbox-inc/laravel-firebase/zipball/74b70fd255d0b0fc28e4ec085a03cf2e9ab1d3c7",
+                "reference": "74b70fd255d0b0fc28e4ec085a03cf2e9ab1d3c7",
                 "shasum": ""
             },
             "require": {
@@ -157,7 +157,7 @@
                     "email": "t.goto@chatbox-inc.com"
                 }
             ],
-            "time": "2019-04-10T16:10:23+00:00"
+            "time": "2019-10-24T15:07:56+00:00"
         },
         {
             "name": "chatbox-inc/laravel-heroku",
@@ -6325,6 +6325,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "chatbox-inc/laravel-firebase": 20,
         "chatbox-inc/speakernote": 20
     },
     "prefer-stable": true,

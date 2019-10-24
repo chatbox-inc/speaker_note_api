@@ -15,7 +15,7 @@
     "require": {
         "php": "^7.2",
         "barryvdh/laravel-cors": "^0.11.4",
-        "chatbox-inc/laravel-firebase": "^1.0",
+        "chatbox-inc/laravel-firebase": "dev-master",
         "chatbox-inc/laravel-heroku": "^0.0.6",
         "chatbox-inc/speakernote": "dev-master",
         "fideloper/proxy": "^4.0",

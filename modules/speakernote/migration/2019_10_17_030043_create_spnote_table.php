@@ -18,7 +18,9 @@ class CreateSPNoteTable extends Migration
             $table->string('uid');
             $table->string('email');
             $table->string('display_name');
+            $table->string('title');
             $table->string('photo_url');
+            $table->text('profile');
             $table->timestamps();
         });
 
@@ -48,13 +50,14 @@ class CreateSPNoteTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('event_id');
-            $table->string('event_name')->nullable();
-            $table->dateTime('event_date')->nullable();
+            $table->string('code')->unique();
             $table->string('title');
             $table->text('detail');
             $table->string('speaker_name');
+            $table->string('speaker_title');
             $table->string('speaker_photo');
-            $table->string('speaker_profile')->nullable();
+            $table->text('speaker_profile');
+            $table->string('status')->nullable();
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('t_users');

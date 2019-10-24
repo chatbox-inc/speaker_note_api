@@ -9,15 +9,10 @@ class GetAction
 {
     use AuthUserTrait;
 
-    public function handle($seriesId)
+    public function handle(Event $event)
     {
-        $team = Event::where("connpass_event_id",$seriesId)->first();
-        if(!$team){
-            abort(404);
-        }
-
         return [
-            "event" => $team
+            "event" => $event
         ];
     }
 }

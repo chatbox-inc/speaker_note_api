@@ -18,6 +18,7 @@ use Chatbox\SpeakerNote\Http\Actions;
 Route::group([
     "prefix" => "spnote",
     "middleware" => [
+        "bindings",
         HandleCors::class
     ]
 ],function(){
@@ -28,21 +29,26 @@ Route::group([
     // ログイン系の処理を行う
     Route::post('/login', Actions\Login\LoginAction::class."@handle");
 
+    // ログイン系の処理を行う
+    Route::get('/profile', Actions\Profile\GetAction::class."@handle");
+
     // 登壇情報一覧の取得: Max 100 件
-    Route::get('/talks', Hoge::class."@handle");
+    Route::get('/talks', Actions\Talk\GetListAction::class."@handle");
+    Route::get('/talk/{talk_code}', Actions\Talk\GetAction::class."@handle");
     // 登壇情報の追加
-    Route::post('/talk', Hoge::class."@handle");
-    // 登壇情報の編集
-    Route::patch('/talk/{key}', Hoge::class."@handle");
+    Route::put('/talk/event/{event_id}', Actions\Talk\PutAction::class."@handle");
+    // 登壇情報の編
+    Route::patch('/talk/{talk_code}', Hoge::class."@handle");
 
     // グループの作成
     //Route::post('/', Hoge::class."@handle");
 
-    // イベントの編集
+    // グループ情報の取得
     Route::get('/team/{series_id}', Actions\Team\GetAction::class."@handle");
 
-    // イベントの編集
+    // イベント情報の取得
     Route::get('/event/{event_id}', Actions\Event\GetAction::class."@handle");
 });
+
 
 
