@@ -2,6 +2,7 @@
 namespace Chatbox\SpeakerNote\Service;
 
 
+use Carbon\Carbon;
 use Chatbox\SpeakerNote\Model\Event;
 use Chatbox\SpeakerNote\Model\Team;
 use GuzzleHttp\Client;
@@ -41,8 +42,8 @@ class ConnpassService
         $eventId = Arr::get($eventInfo,"event_id");
         $eventTitle = Arr::get($eventInfo,"title");
         $eventUrl = Arr::get($eventInfo,"event_url");
-        $eventStartedat = Arr::get($eventInfo,"started_at");
-        $eventEndedat = Arr::get($eventInfo,"ended_at");
+        $eventStartedat = Carbon::createFromFormat(Arr::get($eventInfo,"started_at"),DATE_ATOM);
+        $eventEndedat = Carbon::createFromFormat(Arr::get($eventInfo,"ended_at"),DATE_ATOM);
         $eventAddress = Arr::get($eventInfo,"address");
 
         $event = Event::where("connpass_event_id",$eventId)->first();
