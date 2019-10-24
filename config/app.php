@@ -176,6 +176,7 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         \Chatbox\SpeakerNote\SpeakerNoteServiceProvider::class,
+        \Chatbox\Heroku\HerokuPostgresServiceProvider::class
 
     ],
 
