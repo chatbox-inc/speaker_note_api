@@ -15,6 +15,7 @@
     "require": {
         "php": "^7.2",
         "chatbox-inc/laravel-firebase": "^1.0",
+        "chatbox-inc/laravel-heroku": "^0.0.6",
         "chatbox-inc/speakernote": "dev-master",
         "fideloper/proxy": "^4.0",
         "guzzlehttp/guzzle": "^6.4",

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "28cd04df2fdf75e54fb8fb86c810c825",
+    "content-hash": "101d64c99f83b6137c8267aa08d608b6",
     "packages": [
         {
             "name": "chatbox-inc/laravel-firebase",
@@ -44,6 +44,43 @@
                 }
             ],
             "time": "2019-04-10T16:10:23+00:00"
+        },
+        {
+            "name": "chatbox-inc/laravel-heroku",
+            "version": "0.0.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/chatbox-inc/laravel-heroku.git",
+                "reference": "ad9e6b3822f4ccba2efa44c297944fd9d94d1231"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/chatbox-inc/laravel-heroku/zipball/ad9e6b3822f4ccba2efa44c297944fd9d94d1231",
+                "reference": "ad9e6b3822f4ccba2efa44c297944fd9d94d1231",
+                "shasum": ""
+            },
+            "require": {
+                "php": "7.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Chatbox\\Heroku\\": [
+                        "./src"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "mikakane",
+                    "email": "mikakane2@gmail.com"
+                }
+            ],
+            "time": "2019-06-08T14:48:00+00:00"
         },
         {
             "name": "chatbox-inc/speakernote",
