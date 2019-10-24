@@ -38,7 +38,7 @@ class CreateSPNoteTable extends Migration
             $table->string('event_url');
             $table->dateTime('event_start_at');
             $table->dateTime('event_end_at');
-            $table->dateTime('address');
+            $table->string('address');
             $table->timestamps();
 
             $table->foreign('team_id')->references('id')->on('t_teams');
