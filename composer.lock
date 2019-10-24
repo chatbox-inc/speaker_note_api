@@ -126,12 +126,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/chatbox-inc/laravel-firebase.git",
-                "reference": "74b70fd255d0b0fc28e4ec085a03cf2e9ab1d3c7"
+                "reference": "2b3389a3b75aadd426d72ea9d2d3fa9b51780f7a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/chatbox-inc/laravel-firebase/zipball/74b70fd255d0b0fc28e4ec085a03cf2e9ab1d3c7",
-                "reference": "74b70fd255d0b0fc28e4ec085a03cf2e9ab1d3c7",
+                "url": "https://api.github.com/repos/chatbox-inc/laravel-firebase/zipball/2b3389a3b75aadd426d72ea9d2d3fa9b51780f7a",
+                "reference": "2b3389a3b75aadd426d72ea9d2d3fa9b51780f7a",
                 "shasum": ""
             },
             "require": {
@@ -157,7 +157,7 @@
                     "email": "t.goto@chatbox-inc.com"
                 }
             ],
-            "time": "2019-10-24T15:07:56+00:00"
+            "time": "2019-10-24T15:24:34+00:00"
         },
         {
             "name": "chatbox-inc/laravel-heroku",
