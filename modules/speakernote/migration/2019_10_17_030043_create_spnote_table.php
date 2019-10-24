@@ -22,6 +22,28 @@ class CreateSPNoteTable extends Migration
             $table->timestamps();
         });
 
+        Schema::create('t_teams', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('connpass_series_id')->unique();
+            $table->string('team_name');
+            $table->string('team_url');
+            $table->timestamps();
+        });
+
+        Schema::create('t_events', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->unsignedBigInteger('team_id');
+            $table->string('connpass_event_id')->unique();
+            $table->string('event_name');
+            $table->string('event_url');
+            $table->dateTime('event_start_at');
+            $table->dateTime('event_end_at');
+            $table->dateTime('address');
+            $table->timestamps();
+
+            $table->foreign('team_id')->references('id')->on('t_teams');
+        });
+
         Schema::create('t_talks', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
@@ -40,14 +62,6 @@ class CreateSPNoteTable extends Migration
 
         });
 
-        Schema::create('t_teams', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('connpass_series_id')->unique();
-            $table->string('team_name');
-            $table->string('team_url');
-            $table->timestamps();
-        });
-
         Schema::create('t_team_owner', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('team_id');
@@ -58,19 +72,6 @@ class CreateSPNoteTable extends Migration
             $table->foreign('team_id')->references('id')->on('t_teams');
         });
 
-        Schema::create('t_events', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->unsignedBigInteger('team_id');
-            $table->string('connpass_event_id')->unique();
-            $table->string('event_name');
-            $table->string('event_url');
-            $table->dateTime('event_start_at');
-            $table->dateTime('event_end_at');
-            $table->dateTime('address');
-            $table->timestamps();
-
-            $table->foreign('team_id')->references('id')->on('t_teams');
-        });
     }
     /**
      * Reverse the migrations.
@@ -79,6 +80,11 @@ class CreateSPNoteTable extends Migration
      */
     public function down()
     {
+        Schema::dropIfExists("t_team_owner");
+        Schema::dropIfExists("t_talks");
+        Schema::dropIfExists("t_events");
+        Schema::dropIfExists("t_teams");
+        Schema::dropIfExists("t_users");
         //
     }
 }
