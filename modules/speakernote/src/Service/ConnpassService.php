@@ -42,8 +42,8 @@ class ConnpassService
         $eventId = Arr::get($eventInfo,"event_id");
         $eventTitle = Arr::get($eventInfo,"title");
         $eventUrl = Arr::get($eventInfo,"event_url");
-        $eventStartedat = Carbon::createFromFormat(Arr::get($eventInfo,"started_at"),DATE_ATOM);
-        $eventEndedat = Carbon::createFromFormat(Arr::get($eventInfo,"ended_at"),DATE_ATOM);
+        $eventStartedat = Carbon::createFromFormat(DATE_ATOM,Arr::get($eventInfo,"started_at"));
+        $eventEndedat = Carbon::createFromFormat(DATE_ATOM,Arr::get($eventInfo,"ended_at"));
         $eventAddress = Arr::get($eventInfo,"address");
 
         $event = Event::where("connpass_event_id",$eventId)->first();
