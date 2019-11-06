@@ -32,6 +32,9 @@ Route::group([
     // ログイン系の処理を行う
     Route::get('/profile', Actions\Profile\GetAction::class."@handle");
 
+    // プロフィール編集
+    Route::patch('/profile/edit', Actions\Profile\EditAction::class."@handle");
+
     // 登壇情報一覧の取得: Max 100 件
     Route::get('/talks', Actions\Talk\GetListAction::class."@handle");
     Route::get('/talk/{talk_code}', Actions\Talk\GetAction::class."@handle");
